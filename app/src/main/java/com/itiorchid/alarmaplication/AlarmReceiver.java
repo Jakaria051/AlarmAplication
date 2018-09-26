@@ -13,6 +13,10 @@ public class AlarmReceiver extends BroadcastReceiver {
         Intent serviceIntent = new Intent(context,RingtonePlayingService.class);
         serviceIntent.putExtra("extra", state);
 
+
+
+        ///for testing purpose
+
         context.startService(serviceIntent);
     }
 }
