@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity  {
         this.context = this;
         alarmTextView = (TextView) findViewById(R.id.alarmText);
         final Intent myIntent = new Intent(this.context, AlarmReceiver.class);
-        alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+     
 
-        // set the alarm to the time that you picked
+       
         final Calendar calendar = Calendar.getInstance();
 
         alarmTimePicker = (TimePicker) findViewById(R.id.alarmTimePicker);
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity  {
             public void onClick(View v) {
 
                 calendar.add(Calendar.SECOND, 3);
-                //setAlarmText("You clicked a button");
+              
 
                 final int hour = alarmTimePicker.getCurrentHour();
                 final int minute = alarmTimePicker.getCurrentMinute();;
@@ -81,11 +81,11 @@ public class MainActivity extends AppCompatActivity  {
                 alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending_intent);
 
 
-                // now you should change the set Alarm text so it says something nice
+               
 
 
                 setAlarmText("Alarm set to " + hour + ":" + minute);
-                //Toast.makeText(getApplicationContext(), "You set the alarm", Toast.LENGTH_SHORT).show();
+               
             }
 
         });
